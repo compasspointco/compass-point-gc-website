@@ -1,0 +1,192 @@
+/*
+Compass Point LLC Brand Styling Sheet
+Built to match the selected logo assets without changing the logo, text, mark, proportions, or tagline.
+
+Primary usage:
+- Use the light logo on white or very light backgrounds.
+- Use the white/dark logo on charcoal, black, navy, or photography.
+- Keep the logo clear of clutter and do not alter the mark, text, spacing, or tagline.
+*/
+
+:root {
+  /* Brand Colors */
+  --cp-orange: #f59e0b;
+  --cp-orange-dark: #c76f00;
+  --cp-black: #05080c;
+  --cp-charcoal: #0b1118;
+  --cp-ink: #111827;
+  --cp-steel: #6b7280;
+  --cp-silver: #d1d5db;
+  --cp-white: #f8fafc;
+
+  /* Surface Colors */
+  --cp-bg-light: #ffffff;
+  --cp-bg-dark: #05080c;
+  --cp-surface-light: #f8fafc;
+  --cp-surface-dark: #0b1118;
+
+  /* Typography */
+  --cp-font-primary: "Manrope", "Sora", "Inter", "Arial", sans-serif;
+  --cp-font-display: "Sora", "Manrope", "Inter", "Arial", sans-serif;
+
+  /* Layout */
+  --cp-radius-sm: 8px;
+  --cp-radius-md: 14px;
+  --cp-radius-lg: 24px;
+  --cp-max-width: 1180px;
+
+  /* Effects */
+  --cp-shadow-soft: 0 12px 36px rgba(2, 6, 23, 0.12);
+  --cp-shadow-dark: 0 24px 80px rgba(0, 0, 0, 0.34);
+  --cp-orange-glow: 0 0 0 1px rgba(245, 158, 11, 0.24), 0 18px 50px rgba(245, 158, 11, 0.16);
+}
+
+body {
+  margin: 0;
+  font-family: var(--cp-font-primary);
+  color: var(--cp-ink);
+  background: var(--cp-bg-light);
+}
+
+.cp-dark {
+  color: var(--cp-white);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(245, 158, 11, 0.12), transparent 30%),
+    linear-gradient(135deg, #05080c 0%, #0b1118 48%, #111827 100%);
+}
+
+.cp-container {
+  width: min(var(--cp-max-width), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.cp-logo {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.cp-logo--header {
+  width: min(520px, 100%);
+}
+
+.cp-logo--hero {
+  width: min(900px, 100%);
+}
+
+.cp-logo-clearspace {
+  padding: 32px;
+}
+
+.cp-eyebrow {
+  color: var(--cp-orange);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.cp-heading-xl {
+  font-family: var(--cp-font-display);
+  font-size: clamp(2.7rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  font-weight: 850;
+}
+
+.cp-heading-lg {
+  font-family: var(--cp-font-display);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.cp-body {
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--cp-steel);
+}
+
+.cp-dark .cp-body {
+  color: var(--cp-silver);
+}
+
+.cp-tagline {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cp-steel);
+}
+
+.cp-divider {
+  width: 96px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--cp-orange);
+}
+
+.cp-card {
+  background: var(--cp-bg-light);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--cp-radius-lg);
+  padding: 28px;
+  box-shadow: var(--cp-shadow-soft);
+}
+
+.cp-dark .cp-card {
+  background: rgba(11, 17, 24, 0.78);
+  border-color: rgba(209, 213, 219, 0.14);
+  box-shadow: var(--cp-shadow-dark);
+}
+
+.cp-card--accent {
+  border-color: rgba(245, 158, 11, 0.38);
+  box-shadow: var(--cp-orange-glow);
+}
+
+.cp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: var(--cp-radius-sm);
+  border: 1px solid transparent;
+  background: var(--cp-orange);
+  color: var(--cp-black);
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.cp-button--secondary {
+  background: transparent;
+  color: currentColor;
+  border-color: rgba(107, 114, 128, 0.35);
+}
+
+.cp-hero {
+  padding: 92px 0;
+}
+
+.cp-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.cp-service-card {
+  grid-column: span 4;
+}
+
+@media (max-width: 800px) {
+  .cp-service-card {
+    grid-column: span 12;
+  }
+
+  .cp-logo-clearspace {
+    padding: 20px;
+  }
+}

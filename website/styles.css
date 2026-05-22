@@ -1,19 +1,19 @@
-/* ── Design tokens ── */
+/* ── Design tokens — aligned to compass-point-brand.css ── */
 :root {
-  --navy:         #0b2336;
-  --navy-mid:     #143352;
-  --slate:        #2a3a47;
-  --accent:       #e86f00;
-  --accent-dark:  #c45e00;
-  --text:         #0b2336;
-  --muted:        #4a5568; /* #6b7280 fails WCAG AA on white; this is ~7:1 */
+  --navy:         #0b1118;   /* cp-charcoal */
+  --navy-mid:     #111827;   /* cp-ink */
+  --slate:        #1f2937;
+  --accent:       #f59e0b;   /* cp-orange — amber; use dark text on this bg */
+  --accent-dark:  #c76f00;   /* cp-orange-dark */
+  --text:         #111827;   /* cp-ink */
+  --muted:        #4a5568;   /* intentionally darker than cp-steel for WCAG AA */
   --bg:           #ffffff;
-  --bg-light:     #f4f7fa;
-  --border:       #d1dce7;
-  --border-light: #e8eef5;
-  --radius:       6px;
-  --max-w:        1100px;
-  --header-h:     108px;
+  --bg-light:     #f8fafc;   /* cp-surface-light */
+  --border:       #e5e7eb;
+  --border-light: #f3f4f6;
+  --radius:       8px;       /* cp-radius-sm */
+  --max-w:        1180px;    /* cp-max-width */
+  --header-h:     116px;
 }
 
 /* ── Reset ── */
@@ -21,7 +21,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--cp-font-primary);
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
@@ -60,8 +60,8 @@ a:hover { color: var(--accent-dark); }
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(255, 255, 255, .97);
-  border-bottom: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, .98);
+  border-bottom: 2px solid var(--border-light);
   backdrop-filter: blur(8px);
   height: var(--header-h);
 }
@@ -79,7 +79,7 @@ a:hover { color: var(--accent-dark); }
   color: var(--navy);
   flex-shrink: 0;
 }
-.brand-wordmark { height: 92px; width: auto; display: block; }
+.brand-wordmark { height: 80px; width: auto; display: block; }
 
 .main-nav { margin-left: auto; }
 
@@ -158,7 +158,7 @@ a:hover { color: var(--accent-dark); }
   line-height: 1.2;
   font-family: inherit;
 }
-.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: #05080c; border-color: var(--accent); }
 .btn.primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
 .btn.ghost { background: transparent; color: var(--navy); border-color: var(--navy); }
 .btn.ghost:hover { background: var(--navy); color: #fff; }
@@ -168,7 +168,9 @@ a:hover { color: var(--accent-dark); }
 /* ── Hero ── */
 .hero {
   position: relative;
-  background: var(--navy);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(245, 158, 11, 0.12), transparent 30%),
+    linear-gradient(135deg, #05080c 0%, #0b1118 48%, #111827 100%);
   color: #fff;
   overflow: hidden;
   padding: 5rem 0 4rem;
@@ -197,6 +199,14 @@ a:hover { color: var(--accent-dark); }
   font-weight: 800;
   letter-spacing: -.025em;
   max-width: 680px;
+}
+.hero-tagline {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .45);
+  margin: 0 0 1.5rem;
 }
 .hero-lede {
   font-size: clamp(.98rem, 1.5vw, 1.12rem);
@@ -235,8 +245,10 @@ a:hover { color: var(--accent-dark); }
 
 /* ── Differentiators strip ── */
 .differentiators {
-  background: var(--accent);
+  background: #0b1118;
   color: #fff;
+  border-top: 2px solid rgba(245, 158, 11, .25);
+  border-bottom: 2px solid rgba(245, 158, 11, .25);
   padding: 1.25rem 0;
 }
 .diff-grid {
@@ -253,8 +265,8 @@ a:hover { color: var(--accent-dark); }
   border-right: 1px solid rgba(255,255,255,.2);
 }
 .diff-item:last-child { border-right: none; }
-.diff-item strong { font-weight: 700; font-size: .88rem; display: block; }
-.diff-item span { opacity: .88; line-height: 1.4; }
+.diff-item strong { font-weight: 700; font-size: .88rem; display: block; color: var(--accent); }
+.diff-item span { color: rgba(255,255,255,.65); line-height: 1.4; }
 
 /* ── Section shells ── */
 .section { padding: 4.5rem 0; }
@@ -406,7 +418,7 @@ a:hover { color: var(--accent-dark); }
 .contact-aside-note p { font-size: .87rem; color: rgba(255,255,255,.68); line-height: 1.55; margin: 0 0 .85rem; }
 
 /* ── Footer ── */
-.site-footer { background: #07121c; color: rgba(255, 255, 255, .55); padding: 3rem 0 2rem; }
+.site-footer { background: #05080c; color: rgba(255, 255, 255, .55); padding: 3rem 0 2rem; }
 .footer-inner { display: grid; grid-template-columns: 1fr 1fr 1.6fr 1fr; gap: 2rem; }
 .footer-logo { height: 52px; width: auto; margin-bottom: .65rem; }
 .footer-copy { font-size: .8rem; margin: 0; line-height: 1.55; }
@@ -416,7 +428,7 @@ a:hover { color: var(--accent-dark); }
 .sdvosb-badge {
   display: inline-block;
   background: var(--accent);
-  color: #fff;
+  color: #05080c;
   font-weight: 800;
   padding: .3rem .75rem;
   border-radius: var(--radius);
