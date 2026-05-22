@@ -13,7 +13,7 @@
   --border-light: #f3f4f6;
   --radius:       8px;       /* cp-radius-sm */
   --max-w:        1180px;    /* cp-max-width */
-  --header-h:     116px;
+  --header-h:     188px;
 }
 
 /* ── Reset ── */
@@ -79,7 +79,7 @@ a:hover { color: var(--accent-dark); }
   color: var(--navy);
   flex-shrink: 0;
 }
-.brand-wordmark { height: 80px; width: auto; display: block; }
+.brand-wordmark { height: 160px; width: auto; display: block; }
 
 .main-nav { margin-left: auto; }
 
