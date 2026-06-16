@@ -7,7 +7,7 @@ Quick start
 - Replace placeholders for contact info and registration values in `index.html` (if needed):
   - Email: `mpetty@compasspointgc.com` is already set in the template.
   - Replace `PHONE_HERE` with your phone number (two places).
-  - Replace `CAGE_PLACEHOLDER` and `UEI_PLACEHOLDER` with confirmed values when available.
+  - CAGE code (20VV8) is set. Replace `UEI_PLACEHOLDER` with confirmed value when available.
 
 Form handling
 - The contact form includes `data-netlify="true"` and a hidden `form-name` input to allow direct Netlify form submissions. If you host on Netlify, no further backend is required.
