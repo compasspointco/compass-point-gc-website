@@ -345,6 +345,8 @@ a:hover { color: var(--accent-dark); }
 .cert-title { font-weight: 700; font-size: 1rem; margin-bottom: .4rem; color: var(--navy); }
 .cert-card.cert-primary .cert-title { color: var(--accent-dark); }
 .cert-desc { font-size: .88rem; color: var(--muted); line-height: 1.55; }
+.cert-with-seal { display: flex; align-items: flex-start; gap: 1rem; }
+.cert-seal { flex-shrink: 0; width: 90px; height: auto; border-radius: 4px; }
 .certs-note { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 1rem; margin: 0; }
 
 /* ── Partners ── */
@@ -425,16 +427,7 @@ a:hover { color: var(--accent-dark); }
 .footer-col h4 { color: rgba(255,255,255,.7); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; margin: 0 0 .65rem; }
 .footer-col p { margin: 0 0 .3rem; font-size: .8rem; line-height: 1.5; }
 .footer-cert-col { display: flex; flex-direction: column; align-items: flex-start; gap: .5rem; }
-.sdvosb-badge {
-  display: inline-block;
-  background: var(--accent);
-  color: #05080c;
-  font-weight: 800;
-  padding: .3rem .75rem;
-  border-radius: var(--radius);
-  font-size: .88rem;
-  letter-spacing: .06em;
-}
+.footer-seal { width: 70px; height: auto; border-radius: 3px; }
 .footer-cert-col p { font-size: .8rem; line-height: 1.5; color: rgba(255,255,255,.45); margin: 0; }
 
 /* ── Responsive ── */
